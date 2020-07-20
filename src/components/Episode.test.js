@@ -38,4 +38,8 @@ test('displays episodes as the episodes prop is updated', () => {
 
     //simulate the episodes prop has changed and re-ender the component 
     rerender(<Episodes episodes={episodeData}/>)
+
+    //assert that the episodes are appearing
+    expect(screen.getAllByTestId(/episode/i)).toHaveLength(1);
+    expect(screen.getByText(/chapter one/i)).toBeInTheDocument();
 })
